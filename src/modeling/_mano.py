@@ -19,10 +19,10 @@ import scipy.sparse
 import src.modeling.data.config as cfg
 
 class MANO(nn.Module):
-    def __init__(self):
+    def __init__(self, mano_dir):
         super(MANO, self).__init__()
 
-        self.mano_dir = 'src/modeling/data'
+        self.mano_dir = mano_dir
         self.layer = self.get_layer()
         self.vertex_num = 778
         self.face = self.layer.th_faces.numpy()
